@@ -26,8 +26,9 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        {movies.map(movie => {
-          return <Movie title={movie.title} image={movie.image} />;
+        {movies.map((movie, index) => {
+          console.log(movie, index);
+          return <Movie title={movie.title} image={movie.image} key={index} />;
         })}
       </div>
     );
