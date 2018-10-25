@@ -36,7 +36,8 @@ class App extends Component {
             title: "Trainspotting",
             image:
               "https://upload.wikimedia.org/wikipedia/en/thumb/7/71/Trainspotting_ver2.jpg/250px-Trainspotting_ver2.jpg"
-          }
+          },
+          ...this.state.movies
         ]
       });
     }, 2000);
