@@ -23,24 +23,22 @@ const movies = [
 ];
 
 class App extends Component {
-  // Update order :
-  // componentWillReceiveProps() ->
-  // shouldComponentUpdate() ->
-  // componentWillUpdate() ->
-  // render() ->
-  // componentDidUpdate()
+  state = {
+    greeting: "Hello"
+  };
 
-  componentWillMount() {
-    console.log("first will mount");
-  }
   componentDidMount() {
-    console.log("third did mount");
+    setTimeout(() => {
+      this.setState({
+        greeting: "Hello again!"
+      });
+    }, 2000);
   }
 
   render() {
-    console.log("second render");
     return (
       <div className="App">
+        <h1>{this.state.greeting}</h1>
         {movies.map((movie, index) => {
           console.log(movie, index);
           return <Movie title={movie.title} image={movie.image} key={index} />;
