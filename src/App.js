@@ -28,7 +28,7 @@ class App extends Component {
       <div className="App">
         {movies.map((movie, index) => {
           console.log(movie, index);
-          return <Movie title={movie.title} image={movie.image} key={index} />;
+          return <Movie image={movie.image} key={index} />;
         })}
       </div>
     );
