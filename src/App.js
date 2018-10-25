@@ -23,12 +23,20 @@ const movies = [
 ];
 
 class App extends Component {
+  componentWillMount() {
+    console.log("first will mount");
+  }
+  componentDidMount() {
+    console.log("third did mount");
+  }
+
   render() {
+    console.log("second render");
     return (
       <div className="App">
         {movies.map((movie, index) => {
           console.log(movie, index);
-          return <Movie image={movie.image} key={index} />;
+          return <Movie title={movie.title} image={movie.image} key={index} />;
         })}
       </div>
     );

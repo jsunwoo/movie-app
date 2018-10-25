@@ -5,7 +5,7 @@ import "./Movie.css";
 class Movie extends Component {
   static propTypes = {
     title: PropTypes.string.isRequired,
-    image: PropTypes.string
+    image: PropTypes.string.isRequired
   };
 
   render() {
@@ -20,6 +20,10 @@ class Movie extends Component {
 }
 
 class MoviePoster extends Component {
+  static propTypes = {
+    poster: PropTypes.string.isRequired
+  };
+
   render() {
     //console.log(this.props);
     return <img src={this.props.poster} />;
