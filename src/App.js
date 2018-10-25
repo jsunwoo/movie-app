@@ -4,7 +4,6 @@ import Movie from "./Movie";
 
 class App extends Component {
   state = {
-    greeting: "Hello",
     movies: [
       {
         title: "Matrix",
@@ -32,7 +31,13 @@ class App extends Component {
   componentDidMount() {
     setTimeout(() => {
       this.setState({
-        greeting: "Hello again!"
+        movies: [
+          {
+            title: "Trainspotting",
+            image:
+              "https://upload.wikimedia.org/wikipedia/en/thumb/7/71/Trainspotting_ver2.jpg/250px-Trainspotting_ver2.jpg"
+          }
+        ]
       });
     }, 2000);
   }
@@ -40,7 +45,6 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <h1>{this.state.greeting}</h1>
         {this.state.movies.map((movie, index) => {
           console.log(movie, index);
           return <Movie title={movie.title} image={movie.image} key={index} />;
