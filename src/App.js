@@ -38,15 +38,18 @@ class App extends Component {
       });
     }, 3000);
   }
-  /* {this.state.movies.map((movie, index) => {
-          console.log(movie, index);
-          return <Movie title={movie.title} image={movie.image} key={index} />;
-        })} */
+
+  _renderMovies = () => {
+    const movies = this.state.movies.map((movie, index) => {
+      return <Movie title={movie.title} image={movie.image} key={index} />;
+    });
+    return movies
+  };
 
   render() {
     return (
       <div className="App">
-        {this.state.movies ? "state is full" : "state is empty"}
+        {this.state.movies ? this._renderMovies() : "state is empty"}
       </div>
     );
   }
