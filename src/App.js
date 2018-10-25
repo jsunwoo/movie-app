@@ -23,6 +23,13 @@ const movies = [
 ];
 
 class App extends Component {
+  // Update order :
+  // componentWillReceiveProps() ->
+  // shouldComponentUpdate() ->
+  // componentWillUpdate() ->
+  // render() ->
+  // componentDidUpdate()
+
   componentWillMount() {
     console.log("first will mount");
   }
