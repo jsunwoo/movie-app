@@ -4,7 +4,8 @@ import "./Movie.css";
 
 class Movie extends Component {
   static propTypes = {
-    title: PropTypes.string
+    title: PropTypes.number,
+    image: PropTypes.string
   };
 
   render() {
