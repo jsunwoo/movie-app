@@ -43,13 +43,13 @@ class App extends Component {
     const movies = this.state.movies.map((movie, index) => {
       return <Movie title={movie.title} image={movie.image} key={index} />;
     });
-    return movies
+    return movies;
   };
 
   render() {
     return (
       <div className="App">
-        {this.state.movies ? this._renderMovies() : "state is empty"}
+        {this.state.movies ? this._renderMovies() : "Loading..."}
       </div>
     );
   }
