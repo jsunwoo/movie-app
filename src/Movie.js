@@ -16,8 +16,8 @@ Movie.propTypes = {
   title: PropTypes.string.isRequired
 };
 
-function MoviePoster({ poster }) {
-  return <img src={poster} />;
+function MoviePoster({ poster, alt }) {
+  return <img src={poster} alt={alt} />;
 }
 
 MoviePoster.propTypes = {
