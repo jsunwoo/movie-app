@@ -29,6 +29,8 @@ class App extends Component {
         <Movie
           title={movie.title}
           image={movie.medium_cover_image}
+          synopsis={movie.synopsis}
+          genres={movie.genres}
           key={movie.id}
         />
       );
