@@ -4,17 +4,27 @@ import "./Movie.css";
 
 function Movie({ image, title, genres, synopsis }) {
   return (
-    <div>
-      <MoviePoster poster={image} />
-      <h1>{title}</h1>
-      <div>
+    <div className="Movie">
+      <div className="Movie__Columns">
+        <MoviePoster poster={image} />
+      </div>
+      <div className="Movie__Columns">
+        <h1>{title}</h1>
         {genres.map((gen, index) => (
           <MovieGenre genre={gen} key={index} />
         ))}
+        <p className="Movie__synopsis">{synopsis}</p>
       </div>
-      {synopsis}
     </div>
   );
+}
+
+function MoviePoster({ poster, alt }) {
+  return <img className="Movie__Poster" src={poster} alt={alt} />;
+}
+
+function MovieGenre({ genre }) {
+  return <span className="Movie__Genre">{genre}</span>;
 }
 
 Movie.propTypes = {
@@ -24,17 +34,10 @@ Movie.propTypes = {
   synopsis: PropTypes.string.isRequired
 };
 
-function MoviePoster({ poster, alt }) {
-  return <img src={poster} alt={alt} />;
-}
-
 MoviePoster.propTypes = {
   poster: PropTypes.string.isRequired
 };
 
-function MovieGenre({ genre }) {
-  return <span>{genre}</span>;
-}
 MovieGenre.propTypes = {
   genre: PropTypes.string.isRequired
 };
