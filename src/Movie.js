@@ -10,10 +10,12 @@ function Movie({ image, title, genres, synopsis }) {
       </div>
       <div className="Movie__Columns">
         <h1>{title}</h1>
-        {genres.map((gen, index) => (
-          <MovieGenre genre={gen} key={index} />
-        ))}
-        <p className="Movie__synopsis">{synopsis}</p>
+        <div className="Movie__Genres">
+          {genres.map((gen, index) => (
+            <MovieGenre genre={gen} key={index} />
+          ))}
+        </div>
+        <p className="Movie__Synopsis">{synopsis}</p>
       </div>
     </div>
   );
@@ -35,7 +37,8 @@ Movie.propTypes = {
 };
 
 MoviePoster.propTypes = {
-  poster: PropTypes.string.isRequired
+  poster: PropTypes.string.isRequired,
+  alt: PropTypes.string.isRequired
 };
 
 MovieGenre.propTypes = {
