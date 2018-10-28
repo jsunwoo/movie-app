@@ -6,7 +6,7 @@ function Movie({ image, title, genres, synopsis }) {
   return (
     <div className="Movie">
       <div className="Movie__Columns">
-        <MoviePoster poster={image} />
+        <MoviePoster poster={image} alt={title} />
       </div>
       <div className="Movie__Columns">
         <h1>{title}</h1>
@@ -20,11 +20,11 @@ function Movie({ image, title, genres, synopsis }) {
 }
 
 function MoviePoster({ poster, alt }) {
-  return <img className="Movie__Poster" src={poster} alt={alt} />;
+  return <img className="Movie__Poster" src={poster} alt={alt} title={alt} />;
 }
 
 function MovieGenre({ genre }) {
-  return <span className="Movie__Genre">{genre}</span>;
+  return <span className="Movie__Genre">{genre} </span>;
 }
 
 Movie.propTypes = {
