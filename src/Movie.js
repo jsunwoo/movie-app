@@ -5,17 +5,19 @@ import "./Movie.css";
 function Movie({ image, title, genres, synopsis }) {
   return (
     <div className="Movie">
-      <div className="Movie__Columns">
+      <div className="Movie__Column">
         <MoviePoster poster={image} alt={title} />
       </div>
-      <div className="Movie__Columns">
+      <div className="Movie__Column">
         <h1>{title}</h1>
         <div className="Movie__Genres">
           {genres.map((gen, index) => (
             <MovieGenre genre={gen} key={index} />
           ))}
         </div>
-        <p className="Movie__Synopsis">{synopsis}</p>
+        <div className="Movie__Synopsis">
+          <p>{synopsis}</p>
+        </div>
       </div>
     </div>
   );
