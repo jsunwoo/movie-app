@@ -26,5 +26,6 @@
   ],
   "devDependencies": {
     "prop-types": "^15.6.2"
-  }
+  },
+  "homepage": "https://github.com/jsunwoo/movie-app"
 }
