@@ -17,3 +17,8 @@
   box-sizing: border-box;
   text-overflow: ellipsis;
 }
+
+.Movie__Column:last-child {
+  padding: 20px 0;
+  width: 60%;
+}
